@@ -28,11 +28,11 @@
     <fragment
         android:id="@+id/enterCardNumberFragment"
         android:name="com.segunfrancis.cardinfofinder.presentation.ui.keyboard.EnterCardNumberFragment"
-        android:label="enter_card_number_fragment"
+        android:label="@string/text_enter_card_number"
         tools:layout="@layout/enter_card_number_fragment" />
     <fragment
         android:id="@+id/OCRFragment"
         android:name="com.segunfrancis.cardinfofinder.presentation.ui.ocr.OCRFragment"
-        android:label="o_c_r_fragment"
+        android:label="@string/text_scan_card"
         tools:layout="@layout/o_c_r_fragment" />
 </navigation>

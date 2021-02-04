@@ -7,58 +7,97 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.main.MainFragment">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@id/animation_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="card-payment.json"
-        app:lottie_loop="true" />
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Enter card number"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/darker_gray"
-        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/antic"
+        android:text="@string/text_option"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animation_1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:contentPadding="@dimen/card_item_padding"
+        app:layout_constraintBottom_toTopOf="@id/card_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_chainStyle="spread">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_1"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="card-payment.json"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/antic"
+                android:text="@string/text_enter_card_number"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:contentPadding="@dimen/card_item_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animation_1"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="card-scan.json"
-        app:lottie_loop="true" />
+        app:layout_constraintTop_toBottomOf="@+id/card_1">
 
-    <TextView
-        android:id="@+id/textView_2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Scan card"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/darker_gray"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animation_2" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="card-scan.json"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/textView_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/antic"
+                android:text="@string/text_scan_card"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

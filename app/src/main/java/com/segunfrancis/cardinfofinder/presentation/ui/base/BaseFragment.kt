@@ -25,6 +25,10 @@ abstract class BaseFragment<VM: ViewModel?> : Fragment() {
 
     }
 
+    fun navigateBack() {
+        findNavController().navigateUp()
+    }
+
     fun launchFragment(directions: NavDirections) {
         findNavController().navigate(directions)
     }

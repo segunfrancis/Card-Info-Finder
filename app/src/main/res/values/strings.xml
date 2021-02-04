@@ -16,4 +16,8 @@
     <string name="error_message_404">The numbers you entered might be incorrect, check the numbers and try again</string>
     <string name="error_message_timeout">Internet might be slow, try again later</string>
     <string name="error_message_no_internet">Make sure you are connected to the internet</string>
+    <string name="text_enter_card_number">Enter card number</string>
+    <string name="text_scan_card">Scan card</string>
+    <string name="desc_progress_image">Progress image</string>
+    <string name="text_option">Select how you want to check your card info</string>
 </resources>

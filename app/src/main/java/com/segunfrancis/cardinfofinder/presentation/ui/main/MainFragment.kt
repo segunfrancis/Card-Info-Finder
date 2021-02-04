@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.segunfrancis.cardinfofinder.databinding.MainFragmentBinding
 import com.segunfrancis.cardinfofinder.presentation.ui.base.BaseFragment
 
+
 class MainFragment : BaseFragment<ViewModel>() {
 
     private var _binding: MainFragmentBinding? = null
@@ -24,8 +25,8 @@ class MainFragment : BaseFragment<ViewModel>() {
 
     override fun setClickListeners() {
         binding.apply {
-            animation1.setOnClickListener { launchFragment(MainFragmentDirections.actionMainFragmentToEnterCardNumberFragment()) }
-            animation2.setOnClickListener { launchFragment(MainFragmentDirections.actionMainFragmentToOCRFragment()) }
+            card1.setOnClickListener { launchFragment(MainFragmentDirections.actionMainFragmentToEnterCardNumberFragment()) }
+            card2.setOnClickListener { launchFragment(MainFragmentDirections.actionMainFragmentToOCRFragment()) }
         }
     }
 

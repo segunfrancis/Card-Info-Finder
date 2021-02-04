@@ -8,12 +8,12 @@ import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import com.segunfrancis.cardinfofinder.databinding.EnterCardNumberFragmentBinding
-import com.segunfrancis.cardinfofinder.domain.CardInfoEntity
 import com.segunfrancis.cardinfofinder.presentation.ui.base.BaseFragment
-import com.segunfrancis.cardinfofinder.presentation.util.AppConstants.DEFAULT_TEXT
+import com.segunfrancis.cardinfofinder.presentation.ui.result.ResultFragment
 import com.segunfrancis.cardinfofinder.presentation.util.Result.Success
 import com.segunfrancis.cardinfofinder.presentation.util.Result.Error
 import com.segunfrancis.cardinfofinder.presentation.util.Result.Loading
+import com.segunfrancis.cardinfofinder.presentation.util.circularProgress
 import com.segunfrancis.cardinfofinder.presentation.util.enableState
 import com.segunfrancis.cardinfofinder.presentation.util.showMessage
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,6 +42,11 @@ class EnterCardNumberFragment : BaseFragment<EnterCardNumberViewModel>() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.progressBar.setImageDrawable(circularProgress(requireContext()))
+    }
+
     override fun setClickListeners() {
         binding.apply {
             checkCardButton.setOnClickListener { viewModel.getCardInfo(cardNumberEditText.text.toString()) }
@@ -53,29 +58,23 @@ class EnterCardNumberFragment : BaseFragment<EnterCardNumberViewModel>() {
             when (result) {
                 is Loading -> {
                     binding.progressBar.isVisible = true
+                    binding.checkCardButton.enableState(false)
                 }
                 is Error -> {
                     binding.progressBar.isVisible = false
+                    binding.checkCardButton.enableState(true)
                     binding.root.showMessage(getString(result.formattedErrorMessage))
                     Timber.e(result.error)
                 }
                 is Success -> {
-                    populateData(result.data)
+                    ResultFragment(result.data) {
+                        //navigateBack()
+                    }.show(parentFragmentManager, "result_fragment")
                     binding.progressBar.isVisible = false
+                    binding.checkCardButton.enableState(true)
                     Timber.d(result.data.toString())
                 }
             }
-        }
-    }
-
-    private fun populateData(cardInfo: CardInfoEntity) {
-        with(binding) {
-            textScheme.text = cardInfo.scheme ?: DEFAULT_TEXT
-            textBank.text = cardInfo.bank.name ?: DEFAULT_TEXT
-            textCardNumberLength.text = cardInfo.number?.length?.toString() ?: DEFAULT_TEXT
-            textCountry.text = cardInfo.country?.name ?: DEFAULT_TEXT
-            textPrepaid.text = cardInfo.prepaid?.toString() ?: DEFAULT_TEXT
-            textType.text = cardInfo.type ?: DEFAULT_TEXT
         }
     }
 

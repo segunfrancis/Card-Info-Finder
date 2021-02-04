@@ -5,9 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.ocr.OCRFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <ImageView
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/progress_bar_size"
+        android:layout_height="@dimen/progress_bar_size"
+        android:layout_gravity="center"
+        android:contentDescription="@string/desc_progress_image"
+        android:elevation="26dp"
+        android:visibility="gone" />
 
 </FrameLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".presentation.ui.result.ResultFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <TextView
+        android:id="@+id/text1"
+        style="@style/TextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_scheme_network"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_scheme"
+        style="@style/TextMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_default_text"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text1"
+        tools:text="Mastercard" />
+
+    <TextView
+        android:id="@+id/text2"
+        style="@style/TextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_type"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_type"
+        style="@style/TextMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_default_text"
+        app:layout_constraintStart_toStartOf="@id/text2"
+        app:layout_constraintTop_toBottomOf="@id/text2"
+        tools:text="Credit" />
+
+    <TextView
+        android:id="@+id/text3"
+        style="@style/TextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_bank"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/text_scheme" />
+
+    <TextView
+        android:id="@+id/text_bank"
+        style="@style/TextMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_default_text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/text3"
+        tools:text="First Bank" />
+
+
+    <TextView
+        android:id="@+id/text4"
+        style="@style/TextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_prepaid"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/text_type" />
+
+    <TextView
+        android:id="@+id/text_prepaid"
+        style="@style/TextMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_default_text"
+        app:layout_constraintStart_toStartOf="@id/text4"
+        app:layout_constraintTop_toBottomOf="@id/text4"
+        tools:text="Yes" />
+
+    <TextView
+        android:id="@+id/text5"
+        style="@style/TextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_country"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@+id/text_bank" />
+
+    <TextView
+        android:id="@+id/text_country"
+        style="@style/TextMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/text_default_text"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@id/text5"
+        app:layout_constraintTop_toBottomOf="@id/text5"
+        tools:text="France" />
+
+    <TextView
+        android:id="@+id/text6"
+        style="@style/TextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_card_number_length"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/text_prepaid" />
+
+    <TextView
+        android:id="@+id/text_card_number_length"
+        style="@style/TextMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_default_text"
+        app:layout_constraintStart_toStartOf="@id/text6"
+        app:layout_constraintTop_toBottomOf="@id/text6"
+        tools:text="16" />
+</androidx.constraintlayout.widget.ConstraintLayout>
