@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Card Info Finder</string>
+    <string name="text_scheme_network">Scheme / Network</string>
+    <string name="text_info">Enter the first 8 digits of your card above</string>
+    <string name="text_type">Type</string>
+    <string name="text_bank">Bank</string>
+    <string name="text_prepaid">Prepaid</string>
+    <string name="text_country">Country</string>
+    <string name="text_check">Check</string>
+    <string name="text_card_number_length">Card Number Length</string>
+    <string name="text_default_text">-</string>
+
+    <!--Error messages-->
+    <string name="error_message_generic">Something went wrong</string>
+    <string name="error_message_429">You have reached your limit, try again after some time</string>
+    <string name="error_message_404">The numbers you entered might be incorrect, check the numbers and try again</string>
+    <string name="error_message_timeout">Internet might be slow, try again later</string>
+    <string name="error_message_no_internet">Make sure you are connected to the internet</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.segunfrancis.cardinfofinder.ui.main
+package com.segunfrancis.cardinfofinder.presentation.ui.main
 
 import androidx.lifecycle.ViewModel
 

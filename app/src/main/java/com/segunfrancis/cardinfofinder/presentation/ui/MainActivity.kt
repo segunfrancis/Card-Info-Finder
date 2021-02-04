@@ -1,10 +1,11 @@
-package com.segunfrancis.cardinfofinder
+package com.segunfrancis.cardinfofinder.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.segunfrancis.cardinfofinder.databinding.MainActivityBinding
-import com.segunfrancis.cardinfofinder.ui.main.MainFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: MainActivityBinding

@@ -7,7 +7,32 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.segunfrancis.cardinfofinder.ui.main.MainFragment"
+        android:name="com.segunfrancis.cardinfofinder.presentation.ui.main.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_enterCardNumberFragment"
+            app:destination="@id/enterCardNumberFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/action_mainFragment_to_OCRFragment"
+            app:destination="@id/OCRFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterCardNumberFragment"
+        android:name="com.segunfrancis.cardinfofinder.presentation.ui.keyboard.EnterCardNumberFragment"
+        android:label="enter_card_number_fragment"
+        tools:layout="@layout/enter_card_number_fragment" />
+    <fragment
+        android:id="@+id/OCRFragment"
+        android:name="com.segunfrancis.cardinfofinder.presentation.ui.ocr.OCRFragment"
+        android:label="o_c_r_fragment"
+        tools:layout="@layout/o_c_r_fragment" />
 </navigation>
